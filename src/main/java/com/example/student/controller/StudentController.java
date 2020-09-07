@@ -12,19 +12,19 @@ public class StudentController {
 
     @Autowired
     private StudentServiceImpl studentService;
-    @PostMapping("/createStudent")
+    @PostMapping
     public Student createStudent(@RequestBody StudentRequest studentRequest) {
         return studentService.createStudent(studentRequest);
     }
-    @GetMapping("/fetchStudent")
+    @GetMapping
     public Student getStudent(Long rollno) {
         return studentService.getStudent(rollno);
     }
-    @PutMapping("/updateStudent")
+    @PutMapping
     public Student update(@RequestBody Student student){
         return studentService.update(student);
     }
-    @DeleteMapping("/delete")
+    @DeleteMapping
     public String del(long rollno){
         studentService.del(rollno);
         return "-- Record deleted";
